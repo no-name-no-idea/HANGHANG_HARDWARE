@@ -1,5 +1,5 @@
 #include <Manchester.h>
-#include <SoftwareSerial.h> //½Ã¸®¾óÅë½Å ¶óÀÌºê·¯¸® È£Ãâ
+#include <SoftwareSerial.h> //ì‹œë¦¬ì–¼í†µì‹  ë¼ì´ë¸ŒëŸ¬ë¦¬ í˜¸ì¶œ
 #include <DHT11.h>
 #include <EEPROM.h>
 
@@ -13,10 +13,10 @@
 
 int dht_pin = 5;
 int rf_tx = 4;
-int blueTx=2;   //Tx (º¸³»´ÂÇÉ ¼³Á¤)at
-int blueRx=3;   //Rx (¹Ş´ÂÇÉ ¼³Á¤)
+int blueTx=2;   //Tx (ë³´ë‚´ëŠ”í•€ ì„¤ì •)at
+int blueRx=3;   //Rx (ë°›ëŠ”í•€ ì„¤ì •)
 
-SoftwareSerial mySerial(blueTx, blueRx);  //½Ã¸®¾ó Åë½ÅÀ» À§ÇÑ °´Ã¼¼±¾ğ
+SoftwareSerial mySerial(blueTx, blueRx);  //ì‹œë¦¬ì–¼ í†µì‹ ì„ ìœ„í•œ ê°ì²´ì„ ì–¸
 DHT11 dht11(dht_pin);
 
 byte command = NULL;
@@ -38,7 +38,7 @@ void setup()
 {
   Serial.begin(9600);
   man.setupTransmit(rf_tx, MAX_1200);
-  mySerial.begin(9600); //ºí·çÅõ½º ½Ã¸®¾ó
+  mySerial.begin(9600); //ë¸”ë£¨íˆ¬ìŠ¤ ì‹œë¦¬ì–¼
   start_address = EEPROM.read(0);
   /*if(start_address == 0x00)
   {
